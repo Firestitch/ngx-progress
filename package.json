@@ -80,7 +80,6 @@
     "typescript": "^2.9.2",
     "webpack": "^4.20.2",
     "zone.js": "^0.8.26",
-    "@ngx-loading-bar/http": "^2.1.2",
     "@ngx-loading-bar/http-client": "^2.1.2",
     "rxjs-compat": "^6.3.3",
     "tslib": "^1.9.3",
@@ -91,7 +90,6 @@
     "node": ">=6.0.0"
   },
   "peerDependencies": {
-    "@ngx-loading-bar/http": "^2.1.2",
     "@ngx-loading-bar/http-client": "^2.1.2",
     "rxjs-compat": "^6.3.3",
     "tslib": "^1.9.3"
