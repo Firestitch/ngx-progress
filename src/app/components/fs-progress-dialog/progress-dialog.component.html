@@ -1,0 +1,21 @@
+<div mat-dialog-title>
+  {{ isProcessing ? 'Processing' : 'Done Processing' }}
+</div>
+<div mat-dialog-content>
+  <div class="processing" *ngIf="isProcessing; else completed">
+    <div class="message processing-message" *ngIf="data.config.processingMessage">{{data.config.processingMessage}}</div>
+    <div class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+  </div>
+
+  <ng-template #completed>
+    <div class="completed">
+      <div class="message completed-message" *ngIf="data.config.completedMessage">{{data.config.completedMessage}}</div>
+      <mat-icon>check_circle</mat-icon>
+    </div>
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close] cdkFocusInitial [disabled]="isProcessing">Close</button>
+</div>

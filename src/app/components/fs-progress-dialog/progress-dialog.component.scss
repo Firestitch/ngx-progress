@@ -1,0 +1,22 @@
+
+.spinner {
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+  height: 121px;
+}
+
+.message {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.completed {
+  text-align: center;
+  mat-icon {
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    color: #0ea50e;
+  }
+}

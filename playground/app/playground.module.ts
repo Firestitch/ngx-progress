@@ -6,15 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FsExampleModule } from '@firestitch/example';
 import { FsMessageModule } from '@firestitch/message';
+import { FsApiModule } from '@firestitch/api';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { FsComponentModule } from 'fs-package';
+import { FsProgressModule } from 'fs-package';
 
 import { AppMaterialModule } from './material.module';
 import {
 ExampleComponent,
-ExamplesComponent } from './components';
+ExamplesComponent,
+ProgressDialogComponent } from './components';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -25,7 +27,8 @@ const routes: Routes = [
   bootstrap: [ AppComponent ],
   imports: [
     BrowserModule,
-    FsComponentModule,
+    FsApiModule.forRoot(),
+    FsProgressModule.forRoot({ barColor: 'pink' }),
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
@@ -39,7 +42,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ExamplesComponent,
-    ExampleComponent
+    ExampleComponent,
+    ProgressDialogComponent
   ],
   providers: [
   ],
