@@ -3,3 +3,4 @@
  */
 
 export { FsProgressModule } from './app/fs-progress.module';
+export { FsProgressService } from './app/services/fs-progress.service';
