@@ -7,16 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FsExampleModule } from '@firestitch/example';
 import { FsMessageModule } from '@firestitch/message';
 import { FsApiModule } from '@firestitch/api';
+import { FsProgressModule } from '@firestitch/progress';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { FsProgressModule } from 'fs-package';
-
 import { AppMaterialModule } from './material.module';
-import {
-ExampleComponent,
-ExamplesComponent,
-ProgressDialogComponent } from './components';
+import { ExampleComponent, ExamplesComponent, ProgressDialogComponent } from './components';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [

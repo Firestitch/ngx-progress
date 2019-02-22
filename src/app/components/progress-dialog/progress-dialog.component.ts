@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 
 @Component({
@@ -9,8 +9,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class ProgressDialogComponent {
   public config;
   public isProcessing = true;
+
   constructor(public dialogRef: MatDialogRef<ProgressDialogComponent>,
-               @Inject(MAT_DIALOG_DATA) public data: any) {
+              @Inject(MAT_DIALOG_DATA) public data: any) {
     data.progressDialog
       .processSubscribe(() => {
         this.isProcessing = false;

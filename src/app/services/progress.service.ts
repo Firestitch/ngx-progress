@@ -1,9 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { FS_PROGRESS_CONFIG } from '../fs-progress.providers';
-import { ProgressDialogComponent } from '../components/fs-progress-dialog';
+import { FS_PROGRESS_CONFIG } from '../progress.providers';
+import { ProgressDialogComponent } from '../components/progress-dialog/progress-dialog.component';
 import { ProgressDialog } from '../models/progress-dialog';
-import { ProgressDialogConfig } from '../interfaces';
+import { ProgressDialogConfig } from '../interfaces/progress-dialog-config';
 
 
 @Injectable()
@@ -17,7 +17,7 @@ export class FsProgressService {
     const progressDialog = new ProgressDialog();
 
     config = Object.assign({  processingMessage: this.config.processingDialogMessage,
-                              completedMessage: this.config.completedDialogMessage },config);
+                              completedMessage: this.config.completedDialogMessage }, config);
 
     const dialogRef = this.dialog.open(ProgressDialogComponent, {
       width: '300px',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FsApi } from '@firestitch/api';
-import { FsProgressService } from 'src/app/services';
+import { FsProgressService } from '@firestitch/progress';
 
 
 @Component({

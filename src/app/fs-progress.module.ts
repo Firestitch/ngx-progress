@@ -1,17 +1,20 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
-import { merge } from 'lodash';
+import { merge } from 'lodash-es';
 
-import { FsProgressComponent } from './components/fs-progress/fs-progress.component';
-import { ProgressDialogComponent } from './components/fs-progress-dialog/progress-dialog.component';
-import { FS_PROGRESS_DEFAULT_CONFIG, FS_PROGRESS_CONFIG } from './fs-progress.providers';
+import {
+  MatButtonModule,
+  MatDialogModule,
+  MatIconModule,
+  MatProgressSpinnerModule
+} from '@angular/material'
+
+import { FsProgressComponent } from './components/progress/progress.component';
+import { ProgressDialogComponent } from './components/progress-dialog/progress-dialog.component';
+import { FS_PROGRESS_CONFIG, FS_PROGRESS_DEFAULT_CONFIG } from './progress.providers';
 import { ProgressConfig } from './interfaces/progress-config';
-import { FsProgressService } from './services/fs-progress.service';
-import {  MatButtonModule,
-          MatProgressSpinnerModule,
-          MatDialogModule,
-          MatIconModule} from '@angular/material'
+import { FsProgressService } from './services/progress.service';
 
 
 @NgModule({
@@ -55,5 +58,9 @@ export class FsProgressModule {
 }
 
 export function FsProgressConfigFactory(config: ProgressConfig) {
-  return merge({ barHeight: 2, barColor: '#efefef', processingDialogMessage: 'Processing in progress. Please wait...' }, config);
+  return merge({
+    barHeight: 2,
+    barColor: '#efefef',
+    processingDialogMessage: 'Processing in progress. Please wait...'
+  }, config);
 }
