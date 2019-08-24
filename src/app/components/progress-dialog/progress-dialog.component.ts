@@ -7,14 +7,20 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
   templateUrl: 'progress-dialog.component.html'
 })
 export class ProgressDialogComponent {
+
   public config;
   public isProcessing = true;
+  public message = '';
 
   constructor(public dialogRef: MatDialogRef<ProgressDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
+
+    this.message = data.config.processingMessage;
+
     data.progressDialog
-      .processSubscribe(() => {
+      .processSubscribe((event) => {
         this.isProcessing = false;
+        this.message = 'Done';
       });
   }
 

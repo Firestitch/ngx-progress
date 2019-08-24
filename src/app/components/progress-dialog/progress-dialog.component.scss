@@ -3,20 +3,22 @@
   flex-direction: row;
   justify-content: center;
   display: flex;
-  height: 121px;
+  overflow: hidden;
 }
 
 .message {
-  margin-bottom: 30px;
-  text-align: left;
+  margin-left: 12px;
 }
 
-.completed {
-  text-align: center;
-  mat-icon {
-    font-size: 100px;
-    width: 100px;
-    height: 100px;
-    color: #0ea50e;
-  }
+mat-icon {
+  font-size: 35px;
+  width: 35px;
+  height: 35px;
+  color: #0ea50e;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

@@ -2,7 +2,7 @@
   "name": "@firestitch/progress",
   "title": "",
   "description": "@firestitch/progress",
-  "version": "0.2.0",
+  "version": "7.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-progress"

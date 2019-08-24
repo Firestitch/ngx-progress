@@ -20,7 +20,6 @@ export class FsProgressService {
                               completedMessage: this.config.completedDialogMessage }, config);
 
     const dialogRef = this.dialog.open(ProgressDialogComponent, {
-      width: '300px',
       disableClose: true,
       data: { progressDialog: progressDialog, config: config }
     });

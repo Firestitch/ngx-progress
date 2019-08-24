@@ -61,6 +61,6 @@ export function FsProgressConfigFactory(config: ProgressConfig) {
   return merge({
     barHeight: 2,
     barColor: '#efefef',
-    processingDialogMessage: 'Processing in progress. Please wait...'
+    processingDialogMessage: 'Processing...'
   }, config);
 }

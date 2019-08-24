@@ -13,7 +13,7 @@ export class ProgressDialogComponent {
 
   public start() {
 
-    const progressDialog = this.fsProgressService.open({ completedMessage: 'All Done!' });
+    const progressDialog = this.fsProgressService.open();
 
     this.fsApi.post('https://boilerplate.firestitch.com/api/dummy', { sleep: 5 })
     .subscribe(() =>  {
