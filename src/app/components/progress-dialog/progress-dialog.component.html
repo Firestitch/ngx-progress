@@ -16,6 +16,6 @@
   </div>
 
 </div>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close] cdkFocusInitial [disabled]="isProcessing">Close</button>
+<div mat-dialog-actions *ngIf="!isProcessing">
+  <button mat-button [mat-dialog-close]>Close</button>
 </div>
