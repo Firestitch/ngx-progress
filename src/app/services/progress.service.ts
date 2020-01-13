@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { FS_PROGRESS_CONFIG } from '../progress.providers';
 import { ProgressDialogComponent } from '../components/progress-dialog/progress-dialog.component';
 import { ProgressDialog } from '../models/progress-dialog';

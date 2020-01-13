@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { merge } from 'lodash-es';
 
-import {
-  MatButtonModule,
-  MatDialogModule,
-  MatIconModule,
-  MatProgressSpinnerModule
-} from '@angular/material'
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { FsProgressComponent } from './components/progress/progress.component';
 import { ProgressDialogComponent } from './components/progress-dialog/progress-dialog.component';

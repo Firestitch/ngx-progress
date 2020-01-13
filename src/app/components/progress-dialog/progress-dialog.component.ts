@@ -1,10 +1,11 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
   styleUrls: ['progress-dialog.component.scss'],
-  templateUrl: 'progress-dialog.component.html'
+  templateUrl: 'progress-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProgressDialogComponent {
 
@@ -13,7 +14,8 @@ export class ProgressDialogComponent {
   public message = '';
 
   constructor(public dialogRef: MatDialogRef<ProgressDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) {
+              @Inject(MAT_DIALOG_DATA) public data: any,
+              private _cdRef: ChangeDetectorRef) {
 
     this.message = data.config.processingMessage;
 
@@ -21,6 +23,8 @@ export class ProgressDialogComponent {
       .processSubscribe((event) => {
         this.isProcessing = false;
         this.message = 'Done';
+
+        this._cdRef.markForCheck();
       });
   }
 
