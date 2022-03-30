@@ -40,7 +40,7 @@ import { FsProgressService } from './services/progress.service';
   ],
 })
 export class FsProgressModule {
-  static forRoot(config?: ProgressConfig): ModuleWithProviders {
+  static forRoot(config?: ProgressConfig): ModuleWithProviders<FsProgressModule> {
     return {
       ngModule: FsProgressModule,
       providers: [
