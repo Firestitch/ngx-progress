@@ -2,23 +2,35 @@ import { Subject } from 'rxjs';
 
 export class ProgressDialog {
 
-  private dialogRef;
-  private processSubject = new Subject();
+  public completed = false;
+
+  private _dialogRef;
+  private _processSubject$ = new Subject();
+  private _message$ = new Subject<string>();
 
   public setDialogRef(dialogRef) {
-    this.dialogRef = dialogRef;
+    this._dialogRef = dialogRef;
   }
 
   public complete() {
-    this.processSubject.next();
-    this.processSubject.complete();
+    this._processSubject$.next();
+    this._processSubject$.complete();
+    this.completed = true;
   }
 
-  public processSubscribe(func) {
-    this.processSubject.subscribe(func);
+  public get process$() {
+    return this._processSubject$.asObservable();
+  }
+
+  public get message$() {
+    return this._message$.asObservable();
+  }
+
+  public updateMessage(message) {
+    this._message$.next(message);
   }
 
   public close() {
-    this.dialogRef.close();
+    this._dialogRef.close();
   }
 }

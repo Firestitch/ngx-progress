@@ -13,7 +13,7 @@ export class ExampleComponent {
   }
 
   public test() {
-    this.fsApi.post('https://boilerplate.firestitch.com/api/dummy', { sleep: 5 })
+    this.fsApi.post('https://specify.dev.firestitch.com/api/dummy', { sleep: 5 })
     .subscribe(() =>  {
 
     });
