@@ -1,5 +1,6 @@
 import { Subject } from 'rxjs';
 
+
 export class ProgressDialog {
 
   public completed = false;
