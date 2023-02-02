@@ -12,7 +12,7 @@ import { FsProgressModule } from '@firestitch/progress';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppMaterialModule } from './material.module';
-import { ExampleComponent, ExamplesComponent, ProgressDialogComponent } from './components';
+import { ExampleComponent, ExamplesComponent } from './components';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -39,7 +39,6 @@ const routes: Routes = [
     AppComponent,
     ExamplesComponent,
     ExampleComponent,
-    ProgressDialogComponent
   ],
   providers: [
   ],

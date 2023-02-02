@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { FsProgressComponent } from './components/progress/progress.component';
-import { ProgressDialogComponent } from './components/progress-dialog/progress-dialog.component';
 import { FS_PROGRESS_CONFIG, FS_PROGRESS_DEFAULT_CONFIG } from './progress.providers';
 import { ProgressConfig } from './interfaces/progress-config';
 import { FsProgressService } from './services/progress.service';
@@ -28,11 +27,7 @@ import { FsProgressService } from './services/progress.service';
     FsProgressComponent,
     LoadingBarHttpClientModule
   ],
-  entryComponents: [
-    ProgressDialogComponent
-  ],
   declarations: [
-    ProgressDialogComponent,
     FsProgressComponent
   ],
   providers: [
