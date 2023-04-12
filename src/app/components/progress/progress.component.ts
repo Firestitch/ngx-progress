@@ -9,6 +9,7 @@ import { FS_PROGRESS_CONFIG } from '../../progress.providers';
 })
 export class FsProgressComponent {
   public config;
+  
   constructor(@Inject(FS_PROGRESS_CONFIG) config) {
     this.config = config;
   }
