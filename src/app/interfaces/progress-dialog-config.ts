@@ -1,4 +1,4 @@
 export interface ProgressDialogConfig {
-  processingMessage?: string,
-  completedMessage?: string
+  processingMessage?: string;
+  completedMessage?: string;
 }

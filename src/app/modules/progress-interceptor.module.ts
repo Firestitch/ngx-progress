@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { ProgressInterceptor } from './../interceptors/progress.interceptor';
 
 
@@ -10,7 +11,7 @@ import { ProgressInterceptor } from './../interceptors/progress.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: ProgressInterceptor,
       multi: true,
-    }, 
+    },
   ],
 })
 export class FsProgressInterceptorModule {
