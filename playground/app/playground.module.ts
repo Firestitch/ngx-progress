@@ -20,27 +20,24 @@ const routes: Routes = [
 
 
 @NgModule({
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    FsApiModule.forRoot(),
-    FsProgressModule.forRoot({ barColor: 'pink' }),
-    BrowserAnimationsModule,
-    AppMaterialModule,
-    FormsModule,
-    FsExampleModule.forRoot(),
-    FsMessageModule.forRoot(),
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-  ],
-  entryComponents: [
-  ],
-  declarations: [
-    AppComponent,
-    ExamplesComponent,
-    ExampleComponent,
-  ],
-  providers: [
-  ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FsApiModule.forRoot(),
+        FsProgressModule.forRoot({ barColor: 'pink' }),
+        BrowserAnimationsModule,
+        AppMaterialModule,
+        FormsModule,
+        FsExampleModule.forRoot(),
+        FsMessageModule.forRoot(),
+        RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
+    ],
+    declarations: [
+        AppComponent,
+        ExamplesComponent,
+        ExampleComponent,
+    ],
+    providers: []
 })
 export class PlaygroundModule {
 }
