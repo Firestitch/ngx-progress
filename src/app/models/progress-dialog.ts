@@ -14,7 +14,7 @@ export class ProgressDialog {
   }
 
   public complete() {
-    this._processSubject$.next();
+    this._processSubject$.next(null);
     this._processSubject$.complete();
     this.completed = true;
   }
