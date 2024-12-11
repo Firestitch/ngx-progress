@@ -1,17 +1,19 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+
 import { FsProgressComponent } from './components/progress/progress.component';
-import { FS_PROGRESS_CONFIG, FS_PROGRESS_DEFAULT_CONFIG } from './progress.providers';
 import { ProgressConfig } from './interfaces/progress-config';
-import { FsProgressService } from './services/progress.service';
 import { FsProgressInterceptorModule } from './modules';
+import { FS_PROGRESS_CONFIG, FS_PROGRESS_DEFAULT_CONFIG } from './progress.providers';
+import { FsProgressService } from './services/progress.service';
 
 
 @NgModule({
@@ -22,40 +24,40 @@ import { FsProgressInterceptorModule } from './modules';
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   exports: [
     FsProgressComponent,
-    LoadingBarHttpClientModule
+    LoadingBarHttpClientModule,
   ],
   declarations: [
-    FsProgressComponent
+    FsProgressComponent,
   ],
   providers: [
-    FsProgressService
+    FsProgressService,
   ],
 })
 export class FsProgressModule {
-  static forRoot(config?: ProgressConfig): ModuleWithProviders<FsProgressModule> {
+  public static forRoot(config?: ProgressConfig): ModuleWithProviders<FsProgressModule> {
     return {
       ngModule: FsProgressModule,
       providers: [       
         { provide: FS_PROGRESS_DEFAULT_CONFIG, useValue: config },
         {
           provide: FS_PROGRESS_CONFIG,
-          useFactory: FsProgressConfigFactory,
-          deps: [FS_PROGRESS_DEFAULT_CONFIG]
-        }
-      ]
+          useFactory: fsProgressConfigFactory,
+          deps: [FS_PROGRESS_DEFAULT_CONFIG],
+        },
+      ],
     };
   }
 }
 
-export function FsProgressConfigFactory(config: ProgressConfig) {
+export function fsProgressConfigFactory(config: ProgressConfig) {
   return {      
-      barHeight: 2,
-      barColor: '#efefef',
-      processingDialogMessage: 'Please wait...',
-      ...config,
-    };
+    barHeight: 3,
+    barColor: '#7BB8FF',
+    processingDialogMessage: 'Please wait...',
+    ...config,
+  };
 }

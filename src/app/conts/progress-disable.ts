@@ -1,3 +1,3 @@
-import { HttpContextToken } from "@angular/common/http"
+import { NGX_LOADING_BAR_IGNORED } from '@ngx-loading-bar/http-client';
 
-export const FS_PROGRESS_DISABLE = new HttpContextToken<boolean>(() => false);
+export const FS_PROGRESS_DISABLE = NGX_LOADING_BAR_IGNORED;

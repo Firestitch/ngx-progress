@@ -1,8 +1,8 @@
 {
   "name": "@firestitch/progress",
-  "title": "",
+  "title": "Progress",
   "description": "@firestitch/progress",
-  "version": "18.0.0",
+  "version": "18.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-progress"
@@ -68,7 +68,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "@ngx-loading-bar/core": "^4.2.0",
-    "@ngx-loading-bar/http-client": "^4.2.0"
+    "@ngx-loading-bar/core": "^7.0.0",
+    "@ngx-loading-bar/http-client": "^7.0.0"
   }
 }
