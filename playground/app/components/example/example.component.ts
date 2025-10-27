@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { FsApi } from '@firestitch/api';
 import { FS_PROGRESS_DISABLE } from '@firestitch/progress';
@@ -20,10 +20,8 @@ import { MatButton } from '@angular/material/button';
     imports: [MatButton],
 })
 export class ExampleComponent {
+  private _api = inject(FsApi);
 
-  constructor(
-    private _api: FsApi,
-  ) {}
 
   public test(progress) {
     this._api.post('https://specify.firestitch.dev/api/dummy', { 

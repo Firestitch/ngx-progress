@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { FS_PROGRESS_CONFIG } from '../../progress.providers';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
@@ -15,7 +15,9 @@ export class FsProgressComponent {
   
   public config;
 
-  constructor(@Inject(FS_PROGRESS_CONFIG) config) {
+  constructor() {
+    const config = inject(FS_PROGRESS_CONFIG);
+
     this.config = config;
   }
 }
