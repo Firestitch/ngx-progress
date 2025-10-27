@@ -4,17 +4,20 @@ import { FsApi } from '@firestitch/api';
 import { FS_PROGRESS_DISABLE } from '@firestitch/progress';
 
 import { HttpContext } from '@angular/common/http';
+import { MatButton } from '@angular/material/button';
 
 
 @Component({
-  selector: 'example',
-  templateUrl: './example.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styles: [
-    `button + button {
+    selector: 'example',
+    templateUrl: './example.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    styles: [
+        `button + button {
       margin-left: 5px;
     }`,
-  ],
+    ],
+    standalone: true,
+    imports: [MatButton],
 })
 export class ExampleComponent {
 

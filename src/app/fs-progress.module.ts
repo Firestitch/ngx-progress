@@ -17,25 +17,23 @@ import { FsProgressService } from './services/progress.service';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FsProgressInterceptorModule,
-    LoadingBarHttpClientModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-  ],
-  exports: [
-    FsProgressComponent,
-    LoadingBarHttpClientModule,
-  ],
-  declarations: [
-    FsProgressComponent,
-  ],
-  providers: [
-    FsProgressService,
-  ],
+    imports: [
+        CommonModule,
+        FsProgressInterceptorModule,
+        LoadingBarHttpClientModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        FsProgressComponent,
+    ],
+    exports: [
+        FsProgressComponent,
+        LoadingBarHttpClientModule,
+    ],
+    providers: [
+        FsProgressService,
+    ],
 })
 export class FsProgressModule {
   public static forRoot(config?: ProgressConfig): ModuleWithProviders<FsProgressModule> {
